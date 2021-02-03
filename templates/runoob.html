@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学生信息</title>
+</head>
+<body>
+<h1 align="center">学生信息</h1>
+<table align="center" border="1px">
+    <tr>
+        <th align="center" width="50px">学号</th>
+        <th align="center" width="50px">姓名</th>
+        <th align="center" width="50px">性别</th>
+        <th align="center" width="50px">年龄</th>
+    </tr>
+    {% for var in response %}
+        <tr>
+            <td align="center" width="50px">{{var.0}}</td>
+            <td align="center" width="50px">{{var.1}}</td>
+            {% if var.2 == 0 %}
+                <td align="center" width="50px">未知</td>
+            {% elif var.2 == 1 %}
+                <td align="center" width="50px">男</td>
+            {% elif var.2 == 2 %}
+                <td align="center" width="50px">女</td>
+            {% endif %}
+            <td align="center" width="50px">{{var.3}}</td>
+        </tr>
+    {% endfor %}
+</table>
+<!--<h1 align="center">{{response}}</h1>-->
+</body>
+</html>
